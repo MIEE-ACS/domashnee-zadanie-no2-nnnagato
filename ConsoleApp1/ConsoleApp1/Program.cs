@@ -61,29 +61,56 @@ namespace lab1
         }
         static void Main(string[] args)
         {
+            double r1, r2;
 
-            Console.WriteLine("Введите R1");
-            double r1 = double.Parse(Console.ReadLine());
-            if (r1 < 1)
+            while (true)
             {
-                Console.WriteLine("Указанное значение меньше искомого,возможны разрывы");
-            }
-            if (r1 < 0)
-            {
-                Console.WriteLine("А вы уверены что радиус может быть меньше нуля?.. В таком случае R1=1");
-                r1 = 1;
+                Console.WriteLine("Введите R1");
+                string buf = Console.ReadLine();
+                double buf1;
+                if (double.TryParse(buf, out buf1))
+                {
+                    r1=double.Parse(buf);
+                    if (r1 < 1)
+                    {
+                        Console.WriteLine("Указанное значение меньше искомого,возможны разрывы");
+                    }
+                    if (r1 < 0)
+                    {
+                        Console.WriteLine("А вы уверены что радиус может быть меньше нуля?.. В таком случае R1=1");
+                        r1 = 1;
+                    }
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Введите радиус в виде числа");
+                }
             }
 
-            Console.WriteLine("Введите R2");
-            double r2 = double.Parse(Console.ReadLine());
-            if (r2 < 2)
+            while (true)
             {
-                Console.WriteLine("Указанное значение меньше искомого,возможны разрывы");
-            }
-            if (r2 < 0)
-            {
-                Console.WriteLine("А вы уверены что радиус может быть меньше нуля?.. В таком случае R=2");
-                r2 = 2;
+                Console.WriteLine("Введите R2");
+                string buf = Console.ReadLine();
+                double buf1;
+                if (double.TryParse(buf, out buf1))
+                {
+                    r2 = double.Parse(buf);
+                    if (r2 < 2)
+                    {
+                        Console.WriteLine("Указанное значение меньше искомого,возможны разрывы");
+                    }
+                    if (r2 < 0)
+                    {
+                        Console.WriteLine("А вы уверены что радиус может быть меньше нуля?.. В таком случае R=2");
+                        r2 = 2;
+                    }
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Введите радиус в виде числа");
+                }
             }
 
             for (double x = -7; x <= 3; x += 0.2)
